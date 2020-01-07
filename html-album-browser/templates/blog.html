@@ -1,0 +1,8 @@
+${header}
+    ${nav}
+    ${
+        blogPosts.map(post => {
+            return `<h2>${post.title}</h2><p>${post.content}</p>`
+        }).join('')
+    }
+${footer}
