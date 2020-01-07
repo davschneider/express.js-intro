@@ -13,16 +13,21 @@ app.get('/', (req, res) => {
 })
 
 app.get('/albums', (req, res) => {
-    const albumInfo = album.getAlbums();
-    for (let album of albumInfo) {
-        res.write(`
-        <p>
-            <a href="/albums/${album.id}">
-                ${album.title} : ${album.artist}
-            </a>
-        </p>`);
+    try {
+        const albumInfo = album.getAlbums();
+        for (let album of albumInfo) {
+            res.write(`
+            <p>
+                <a href="/albums/${album.id}">
+                    ${album.title} : ${album.artist}
+                </a>
+            </p>`);
+        }
+        res.end();
+    } catch (e) {
+        res.status(404);
+        res.send('Could not find albums list.');
     }
-    res.end();
 });
 
 app.get('/albums/:albumId', (req, res) => {

@@ -1,14 +1,6 @@
 
 const albumsData = require('./albumsData.json');
 
-// function getAlbums() {
-//     let albumInfo = [];
-//     for (let album of albumsData["albums"]) {
-//         albumInfo.push(album);
-//     }
-//     return albumInfo;
-// }
-
 function getAlbums() {
     return albumsData.albums
 }
