@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
         locals: {
             pageTitle: 'The Home Page',
             pageHeader: 'Welcome to the Home Page'
+        },
+        partials: {
+            header: 'partials/header',
+            nav: 'partials/nav',
+            title: 'partials/title',
+            footer: 'partials/footer'
         }
     });
 });
