@@ -17,7 +17,14 @@ function getSongsForAlbum(albumId) {
     }
 }
 
+function getAlbumById(id) {
+    return albumsData.albums.find(album => album.id == id);
+}
+
+console.log(getAlbumById(1001));
+
 module.exports = {
     getAlbums,
-    getSongsForAlbum
+    getSongsForAlbum,
+    getAlbumById
 }
